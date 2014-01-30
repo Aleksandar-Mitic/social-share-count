@@ -105,7 +105,7 @@ class SocialShareCount {
      * @access      public
      * @return      int         Total count from delicious
      */
-    function getDeliciousShare() {
+    public function getDeliciousShare() {
         $json_string = $this->processCurl('http://feeds.delicious.com/v2/json/urlinfo/data?url='.$this->url);
         $json = json_decode($json_string, true);
         return isset($json[0]['total_posts'])?intval($json[0]['total_posts']):0;
